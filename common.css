@@ -1,0 +1,11 @@
+/*通用样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, th { margin: 0; padding: 0; word-wrap: break-word }
+body,input,select,button,textarea{ font-family: "Microsoft YaHei"; color:black;}
+input,select,button,textarea{ border:none;}
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: none; max-width: 100%; }
+input, label, img { vertical-align: middle; }
+address, cite, dfn, em, var { font-style: normal; }
+ul, ol, li, dl, dt, dd { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; outline: none; blr: expression(this.onFocus=this.blur());
+}
