@@ -4,20 +4,16 @@
 * 14px = 0.14rem
 * 16px = 0.16rem
 * */
-(function (doc, win) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            if(clientWidth>=640){
-                docEl.style.fontSize = '100px';
-            }else{
-                docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
-            }
-        };
-
-    if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
+var html = document.getElementsByTagName("html")[0];
+var rootResize = function() {
+    var winClient = document.documentElement.clientWidth;
+    var fontSize = winClient < 640 ? (winClient / 640)*100 : 100;
+    if (fontSize < 20) {
+        fontSize = 20;
+    }
+    html.style.fontSize = fontSize + "px";
+}
+rootResize();
+window.onresize = function() {
+    rootResize();
+}
